@@ -1,0 +1,13 @@
+{
+  "": "[]+[]",
+  "1                    ::: number": "+!+[]",
+  "1                    ::: string": "[]+(+!+[])",
+  "0                    ::: number": "+[]" ,
+  "0                    ::: string": "[]+(+[])",
+  "false                ::: boolean": "![] ",
+  "false                ::: string": "[]+![]",
+  "true                 ::: boolean": "!![]",
+  "true                 ::: string": "[]+!![]",
+  "undefined            ::: string": "[]+[][+!+[]]",
+  "[object object]      ::: string": "[]+{}",
+}
