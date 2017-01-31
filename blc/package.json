@@ -1,0 +1,81 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "blc",
+        "scope": null,
+        "escapedName": "blc",
+        "name": "blc",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "D:\\myProjects\\alphabet\\-"
+    ]
+  ],
+  "_from": "blc@latest",
+  "_id": "blc@0.0.3",
+  "_inCache": true,
+  "_location": "/blc",
+  "_nodeVersion": "7.2.1",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/blc-0.0.3.tgz_1485808335582_0.4707844869699329"
+  },
+  "_npmUser": {
+    "name": "tigran.matsakyan",
+    "email": "matsakyan.7@gmail.com"
+  },
+  "_npmVersion": "4.1.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "blc",
+    "scope": null,
+    "escapedName": "blc",
+    "name": "blc",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://nexus.arm.synisys.com/repository/npm-all/blc/-/blc-0.0.3.tgz",
+  "_shasum": "70d9acec70e1e0595648331e067793d9ae40f3b2",
+  "_shrinkwrap": null,
+  "_spec": "blc",
+  "_where": "D:\\myProjects\\alphabet\\-",
+  "author": {
+    "name": "tigran.matsakyan"
+  },
+  "bin": {
+    "blc": "index.js"
+  },
+  "dependencies": {},
+  "description": "brackets language compiler",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "70d9acec70e1e0595648331e067793d9ae40f3b2",
+    "tarball": "https://nexus.arm.synisys.com/repository/npm-all/blc/-/blc-0.0.3.tgz"
+  },
+  "keywords": [
+    "brackets",
+    "compiler"
+  ],
+  "license": "ISC",
+  "maintainers": [
+    {
+      "name": "tigran.matsakyan",
+      "email": "matsakyan.7@gmail.com"
+    }
+  ],
+  "name": "blc",
+  "optionalDependencies": {},
+  "preferGlobal": true,
+  "readme": "ERROR: No README data found!",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.3"
+}
