@@ -23,7 +23,7 @@ require('./routes')(app);
 
 const server = http.createServer(app);
 
-server.listen(config.get('port') || process.env.PORT || 5000, function() {
+server.listen(process.env.PORT || config.get('port') || 5000, function() {
   figlet('connect', function(err, data) {
     if (err) return console.log(err);
     console.log(data);
