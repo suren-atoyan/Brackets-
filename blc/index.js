@@ -33,7 +33,7 @@ fs.readFile(filePath, (err, data) => {
     }
   }
   fs.writeFile(resultPath, compile(data.toString()), (err) => {
-  	if (err) {
+    if (err) {
       throw err;
     } else {
       console.log('Compilation complited ::: Result in ', resultPath);
@@ -43,19 +43,19 @@ fs.readFile(filePath, (err, data) => {
 });
 
 function compile(str){
-	var compiled = '';
-	var chars = str.split('');
-	for(var i=0; i < chars.length - 1; i++) {
+  var compiled = '';
+  var chars = str.split('');
+  for(var i=0; i < chars.length - 1; i++) {
     // exclude !+(){}[] symbols
     if (baseSymbols.indexOf(chars[i]) == -1) {
-  		compiled += letters[chars[i]];
-  		if(i != chars.length - 2) {
-  			compiled += '+';
-  		}
+      compiled += letters[chars[i]];
+      if(i != chars.length - 2) {
+        compiled += '+';
+      }
     } else {
       compiled = compiled.substr(0, compiled.length - 1);
       compiled += chars[i];
     }
-	}
-	return compiled;
+  }
+  return compiled;
 }
