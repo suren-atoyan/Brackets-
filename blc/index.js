@@ -53,6 +53,7 @@ function compile(str){
         compiled += '+';
       }
     } else {
+      // TODO: Optimize this case
       compiled = compiled.substr(0, compiled.length - 1);
       compiled += chars[i];
     }
