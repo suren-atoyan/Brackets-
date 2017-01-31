@@ -1,1 +1,1 @@
-web: node project-site/app.js
+web: node app.js
