@@ -1,12 +1,27 @@
-var fs = require('fs');
-var alphabet = require('./alphabet.json')
+const fs = require('fs');
+const path = require('path');
+const alphabet = require('../alphabet/alphabet.json');
+
+const letters = Object.assign(
+  alphabet.letters.lowerCases,
+  alphabet.letters.upperCases,
+  alphabet.space
+);
+
+const baseSymbols = alphabet.baseSymbols;
+
+let resultPath;
 
 if (process.argv.length <= 2) {
-    console.log("Please use file");
-    process.exit(-1);
+  console.log("Please use file");
+  process.exit(-1);
+} else if (process.argv.length > 3) {
+  resultPath = process.argv[3];
+} else {
+  resultPath = __dirname + '/result';
 }
- 
-var filePath = process.argv[2];
+
+const filePath = process.argv[2];
 
 fs.readFile(filePath, (err, data) => {
   if (err) {
@@ -17,22 +32,30 @@ fs.readFile(filePath, (err, data) => {
       throw err;
     }
   }
-  fs.writeFile(filePath, compile(data.toString()), (err) => {
-	if (err) throw err;
-	console.log('Compilation complited');
+  fs.writeFile(resultPath, compile(data.toString()), (err) => {
+  	if (err) {
+      throw err;
+    } else {
+      console.log('Compilation complited ::: Result in ', resultPath);
+    };
   });
 
 });
 
 function compile(str){
 	var compiled = '';
-	str = str.toLowerCase();
 	var chars = str.split('');
-	for(var i=0; i < chars.length; i++){
-		compiled += alphabet[chars[i]];
-		if(i != chars.length - 1){
-			compiled += '+';
-		}
+	for(var i=0; i < chars.length - 1; i++) {
+    // exclude !+(){}[] symbols
+    if (baseSymbols.indexOf(chars[i]) == -1) {
+  		compiled += letters[chars[i]];
+  		if(i != chars.length - 2) {
+  			compiled += '+';
+  		}
+    } else {
+      compiled = compiled.substr(0, compiled.length - 1);
+      compiled += chars[i];
+    }
 	}
 	return compiled;
 }
