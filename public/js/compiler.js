@@ -83,13 +83,30 @@
     resultSection.innerHTML = compile(textValue);
   });
 
+  function isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+  }
+
+  function getCurrentNumber(n) {
+    return '[]+(' + '+!+[]'.repeat(n) + ')';
+  }
+
   function compile(str){
     var compiled = '';
     var chars = str.split('');
     for(var i=0; i < chars.length - 1; i++) {
       // exclude !+(){}[] symbols
       if (baseSymbols.indexOf(chars[i]) == -1) {
-        compiled += letters[chars[i]];
+        // choose number
+        if (isNumeric(chars[i])) {
+          if (+chars[i] == 0) {
+            compiled += '(+[])'; // or +[]  
+          } else {
+            compiled += getCurrentNumber(+chars[i]);
+          }
+        } else {
+          compiled += letters[chars[i]];
+        }
         if(i != chars.length - 2) {
           compiled += '+';
         }
